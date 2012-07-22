@@ -202,16 +202,21 @@ header {
 }
 
 #contentCol {
-    float: right;
+    float: left;
     width: 580px;
     background: #f0ebd8 no-repeat fixed;
     @include border-radius(2px);
     @include box-shadow(1px 2px 6px rgba(0, 0, 0, .5));
+
+    .hasLeftColumn & {
+        float: right;
+    }
 }
 
 #contentArea {
     height: 100%;
     margin-top: 28px;
+    margin-bottom: 28px;
     padding: 0 0 0 48px;
 
     h2 {
@@ -240,4 +245,26 @@ header {
             margin: 0 0 0 20px;
         }
     }
+
+    p {
+        margin-bottom: 1em;
+
+        label {
+            float: left;
+            width: 140px;
+            padding-right: 20px;
+            text-align: right;
+            line-height: 2em;
+        }
+
+        input {
+            padding-left: 5px;
+        }
+    }
+
+    button {
+        position: relative;
+        right: -282px;
+    }
+
 }

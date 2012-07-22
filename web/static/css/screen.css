@@ -260,7 +260,6 @@ header ul li a:hover {
 #contentCol {
   float: left;
   width: 580px;
-  margin: 'auto';
   background: #f0ebd8 no-repeat fixed;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -271,14 +270,19 @@ header ul li a:hover {
   -moz-box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
   box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
 }
+/* line 211, ../scss/screen.scss */
+.hasLeftColumn #contentCol {
+  float: right;
+}
 
-/* line 212, ../scss/screen.scss */
+/* line 216, ../scss/screen.scss */
 #contentArea {
   height: 100%;
   margin-top: 28px;
+  margin-bottom: 28px;
   padding: 0 0 0 48px;
 }
-/* line 217, ../scss/screen.scss */
+/* line 222, ../scss/screen.scss */
 #contentArea h2 {
   margin: 0 0 14px 0;
   font: bold 44px "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Ludica Sans", "Tahoma", "Helvetica", "Arial", sans-serif;
@@ -286,22 +290,43 @@ header ul li a:hover {
   line-height: 1em;
   color: #536614;
 }
-/* line 224, ../scss/screen.scss */
+/* line 229, ../scss/screen.scss */
 #contentArea h2 a {
   color: #536614;
   text-decoration: none;
 }
-/* line 228, ../scss/screen.scss */
+/* line 233, ../scss/screen.scss */
 #contentArea h2 a:hover {
   color: #78a310;
 }
-/* line 234, ../scss/screen.scss */
+/* line 239, ../scss/screen.scss */
 #contentArea ul {
   position: relative;
   left: -20px;
   width: 590px;
 }
-/* line 239, ../scss/screen.scss */
+/* line 244, ../scss/screen.scss */
 #contentArea ul.overview li {
   margin: 0 0 0 20px;
+}
+/* line 249, ../scss/screen.scss */
+#contentArea p {
+  margin-bottom: 1em;
+}
+/* line 252, ../scss/screen.scss */
+#contentArea p label {
+  float: left;
+  width: 140px;
+  padding-right: 20px;
+  text-align: right;
+  line-height: 2em;
+}
+/* line 260, ../scss/screen.scss */
+#contentArea p input {
+  padding-left: 5px;
+}
+/* line 265, ../scss/screen.scss */
+#contentArea button {
+  position: relative;
+  right: -282px;
 }
