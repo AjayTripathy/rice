@@ -46,7 +46,8 @@ app.post('/addInfo' , function(req, res){
 
 app.get('/getTagInfo' , function (req, res){
     var userName = req.userName;
-    if (isWebsiteAuthenticated){
+    var password = req.password;
+    if (isWebsiteAuthenticated(userId, password)){
       patientInfo.findOne({'userName' : userName} , function(err , doc){
         if (err){
           throw err;
