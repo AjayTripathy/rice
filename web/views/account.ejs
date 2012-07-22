@@ -28,11 +28,13 @@
       <div id="headerContainer">
         <div id="headerArea">
           <ul class="nav">
-            <li class="active"><a href="#">Sign Up</a></li>
+            <li><a href="/">Family</a></li>
+            <li class="active"><a href="/account">Account</a></li>
+            <li><a href="#">Help</a></li>
           </ul>
           <ul class="nav pull-right">
-            <li>Hello, stranger</li>
-            <li><a href="#">About ChipDoctor</a></li>
+            <li>Hello, <a href="/account">Rodney Folz</a></li>
+            <li><a href="#">Logout</a></li>
           </ul>
         </div> <!-- #headerArea -->
       </div> <!-- #headerContainer -->
@@ -41,7 +43,7 @@
     <div role="main" id="main">
       <div id="mainHeaderContainer">
         <div id="mainHeader">
-          <h1>Sign up for ChipDoctor</h1>
+          <h1>Your Account</h1>
           <p>Peace of mind is just a few clicks away.</p>
         </div> <!-- #mainHeader -->
       </div> <!-- #mainHeaderContainer -->
@@ -53,31 +55,29 @@
           </div> <!-- #rightColContainer -->
           <div id="contentArea">
             <p>
-              <label>Username</label>
-              <input id="username" type="text" placeholder="richard_feynman">
-            </p>
-            <p>
-              <label>Password</label>
-              <input id="password" type="password" placeholder="********">
-            </p>
-            <p>
               <label>Blood Type</label>
-              <input id="bloodType" type="text" placeholder="O+">
+              <input id="bloodType" type="text" value="O+">
             </p>
             <p>
               <label>Allergies</label>
-              <input id="allergies" type="text" placeholder="peanuts, tree nuts">
+              <input id="allergies" type="text" value="peanuts, tree nuts">
             </p>
             <p>
               <label>Emergency Contact</label>
-              <input id="contact" type="text" placeholder="John Archibald Wheeler">
+              <input id="contact" type="text" value="John Archibald Wheeler">
             </p>
             <p>
               <label>Contact #</label>
-              <input id="contactNum" type="tel" placeholder="919-555-5309">
+              <input id="contactNum" type="tel" value="919-555-5309">
             </p>
-            <br>
-            <button id="signButton">Sign up</button>
+            <br />
+            <p>Enter your password again to save changes</p>
+            <p>
+              <label>Password</label>
+              <input id="password" type="password" value="********">
+            </p>
+            <br />
+            <button id="signButton">Save changes</button>
           </div> <!-- #contentArea -->
         </div> <!-- #contentCol -->
 
@@ -101,52 +101,6 @@
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
-
-  <script>
-
-$(document).ready(function () {
-  $(document).keydown(function (e) {
-    if (e.which === 13) {
-      $("#signButton").click();
-    }
-  })
-
-  $("#signButton").click(function () {
-    register();
-  });
-
-  var register = function () {
-    var name = $("#username").val();
-    var pw = $("#password").val();
-    var allergies = $("#allergies").val().split(',');
-    var bloodType = $("#bloodType").val();
-    var contactName = $("#contact").val();
-    var contactNumber = $("#contactNum").val();
-    var contactJson = {name : contactName, phoneNumber: contactNumber};
-    var contact = [contactJson];
-
-    if (name && pw && allergies && bloodType && contactName && contactNumber) {
-      $.post("http://localhost:8080/signup", {
-        username: name,
-        password: pw,
-        allergies: allergies,
-        contacts: contact,
-        bloodType: bloodType
-      }, function (data) {
-        if (data['status'] === "ok") {
-          window.location.href = "/";
-        } else {
-          log("Some error occurred", data);
-        }
-      });
-    } else {
-      alert("Fill out all fields");
-    }
-  }
-
-});
-
   </script>
 
 </body>
