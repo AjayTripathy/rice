@@ -258,7 +258,7 @@ header ul li a:hover {
 
 /* line 204, ../scss/screen.scss */
 #contentCol {
-  float: right;
+  float: left;
   width: 580px;
   background: #f0ebd8 no-repeat fixed;
   -webkit-border-radius: 2px;

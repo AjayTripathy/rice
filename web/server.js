@@ -16,7 +16,7 @@ var familyStatus = db.collection('familyStatus');
 var crypto = require('crypto');
 var hash = require('node_hash');
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/static'));
 app.use(express.bodyParser());
 
 app.set('view engine', 'ejs');
@@ -158,6 +158,11 @@ app.post('/addFamilyMember' , function(req, res){
 
 });
 
+app.get('/' , function(req, res){
+  res.render('index');
+
+});
+
 var isValidToken = function(manufacturerId, authToken){
     return true;
 }
@@ -192,6 +197,8 @@ var sendSms = function (message, to){
     }); 
   }   
 }
+
+
 
 app.listen(8080);
 
