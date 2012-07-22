@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, StickyNotesActivity!</string>
+    <string name="app_name">Rice!</string>
+    <string name="write_to_tag">Write to Tag</string>
+    <string name="default_username_text">Rarity</string>
+    <string name="get_tag_info">Register</string>
+    <string />
+    <string name="default_password_text">******</string>
+</resources>

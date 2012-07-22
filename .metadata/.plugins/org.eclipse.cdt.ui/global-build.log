@@ -1,0 +1,384 @@
+01:38:56 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+01:39:00 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+
+Invoking autoreconf in build directory: /Users/khwang/Documents/workspace/flutter
+
+sh -c "autoreconf -i" 
+configure.ac:7: installing `./config.sub'
+configure.ac:8: installing `./missing'
+configure.ac:8: installing `./install-sh'
+configure.ac:7: installing `./config.guess'
+src/Makefile.am: installing `./depcomp'
+Makefile.am: installing `./INSTALL'
+[Operation successful]
+
+Generating Makefile in build directory: /Users/khwang/Documents/workspace/flutter
+
+sh -c /Users/khwang/Documents/workspace/flutter/configure 
+checking build system type... i386-apple-darwin11.4.0
+checking host system type... i386-apple-darwin11.4.0
+checking target system type... i386-apple-darwin11.4.0
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... ./install-sh -c -d
+checking for gawk... no
+checking for gawk... no
+checking for mawk... no
+checking for mawk... no
+checking for nawk... no
+checking for nawk... no
+checking for awk... awk
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: executing depfiles commands
+[Operation successful]
+01:41:15 **** Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+gcc -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.c
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+gcc  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+01:41:42 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+01:41:56 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+01:41:58 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+01:42:11 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+gcc -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.c
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+gcc  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+01:45:26 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+gcc -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.c
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+gcc  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+
+Invoking autoreconf in build directory: /Users/khwang/Documents/workspace/flutter
+
+sh -c "autoreconf -i" 
+configure.ac:7: installing `./config.sub'
+configure.ac:8: installing `./missing'
+configure.ac:8: installing `./install-sh'
+configure.ac:7: installing `./config.guess'
+src/Makefile.am: installing `./depcomp'
+Makefile.am: installing `./INSTALL'
+[Operation successful]
+
+Generating Makefile in build directory: /Users/khwang/Documents/workspace/flutter
+
+sh -c /Users/khwang/Documents/workspace/flutter/configure 
+checking build system type... i386-apple-darwin11.4.0
+checking host system type... i386-apple-darwin11.4.0
+checking target system type... i386-apple-darwin11.4.0
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... ./install-sh -c -d
+checking for gawk... no
+checking for gawk... no
+checking for mawk... no
+checking for mawk... no
+checking for nawk... no
+checking for nawk... no
+checking for awk... awk
+checking whether make sets $(MAKE)... yes
+checking for g++... g++
+checking for C++ compiler default output file name... a.out
+checking whether the C++ compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking for style of include used by make... GNU
+checking dependency style of g++... gcc3
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: executing depfiles commands
+[Operation successful]
+01:49:15 **** Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+01:49:44 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+01:50:47 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+flutter.cpp: In function 'int main()':
+flutter.cpp:18: error: '>>' should be '> >' within a nested template argument list
+make[1]: *** [flutter.o] Error 1
+make: *** [all-recursive] Error 1
+01:52:17 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+01:52:24 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+01:53:12 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+01:53:19 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+01:53:27 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+01:54:20 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+01:55:25 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+01:56:14 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+01:57:46 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+flutter.cpp: In function 'int main()':
+flutter.cpp:19: warning: large integer implicitly truncated to unsigned type
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+01:58:02 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+01:58:23 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+01:59:19 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+01:59:23 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+02:01:01 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+02:01:28 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+09:51:39 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+09:51:51 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+13:04:50 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+13:04:59 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+13:07:12 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+13:07:34 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+13:08:38 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+flutter.cpp: In function 'int main(int, char**)':
+flutter.cpp:18: error: size of array 'M' has non-integral type 'char*'
+flutter.cpp:18: error: size of array 'M' has non-integral type 'char*'
+make[1]: *** [flutter.o] Error 1
+make: *** [all-recursive] Error 1
+13:08:58 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+flutter.cpp: In function 'int main(int, char**)':
+flutter.cpp:18: error: size of array 'M' has non-integral type 'char*'
+flutter.cpp:18: error: size of array 'M' has non-integral type 'char*'
+make[1]: *** [flutter.o] Error 1
+make: *** [all-recursive] Error 1
+13:10:01 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+13:10:11 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+13:10:44 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+13:12:07 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+flutter.cpp: In function 'int main(int, char**)':
+flutter.cpp:18: error: invalid conversion from 'char*' to 'int'
+flutter.cpp:19: error: invalid conversion from 'char*' to 'int'
+make[1]: *** [flutter.o] Error 1
+make: *** [all-recursive] Error 1
+13:13:45 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+flutter.cpp: In function 'int main(int, char**)':
+flutter.cpp:18: error: invalid conversion from 'char**' to 'int'
+flutter.cpp:19: error: invalid conversion from 'char**' to 'int'
+make[1]: *** [flutter.o] Error 1
+make: *** [all-recursive] Error 1
+13:14:06 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+13:14:49 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+13:14:54 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all-am'.
+13:15:46 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+13:18:06 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+13:19:24 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
+13:19:45 **** Incremental Build of configuration Build (GNU) for project flutter ****
+make all 
+Making all in src
+g++ -DPACKAGE_NAME=\"flutter\" -DPACKAGE_TARNAME=\"flutter\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"flutter\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"flutter\" -DVERSION=\"1.0\" -I.     -g -O2 -MT flutter.o -MD -MP -MF .deps/flutter.Tpo -c -o flutter.o flutter.cpp
+mv -f .deps/flutter.Tpo .deps/flutter.Po
+g++  -g -O2   -o a.out flutter.o  
+make[1]: Nothing to be done for `all-am'.
