@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+        
+    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/get_tag_info" android:text="@string/get_tag_info"></Button>
+
+<EditText 
+    android:layout_width="fill_parent" 
+    android:id="@+id/username"
+    android:layout_height="wrap_content" 
+    android:gravity="top" 
+    android:hint="@string/default_username_text">
+</EditText>
+
+<EditText 
+    android:layout_width="fill_parent" 
+    android:id="@+id/password"
+    android:layout_height="wrap_content" 
+    android:gravity="top" 
+    android:hint="@string/default_password_text">
+</EditText>
+
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/medicalInfo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+    android:stretchColumns="*"
+    >
+    <TableRow
+        android:id="@+id/medicalTitleRow"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        >
+        <TextView
+            android:id="@+id/medicalTitleContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+	        android:text="Medical Breakdown"
+	        android:gravity="center"></TextView>
+    </TableRow>
+    <TableRow
+        android:id="@+id/nameRow"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <TextView
+            android:id="@+id/nameLabel"
+            android:text="Name:"></TextView>
+        <TextView
+            android:id="@+id/nameContent"
+            android:text="Mordekaiser"></TextView>
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/bloodTypeRow"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <TextView
+            android:id="@+id/bloodTypeLabel"
+            android:text="Blood Type:"></TextView>
+        <TextView
+            android:id="@+id/bloodTypeContent"
+            android:text="Mordekaiser"></TextView>
+    </TableRow>
+</TableLayout>
+</LinearLayout>
