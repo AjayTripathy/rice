@@ -22,6 +22,10 @@ app.use(express.bodyParser());
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
+app.set('view options', {
+  layout: false
+});
+
 
 
 app.post('/emergencyRead', function(req, res){
@@ -44,6 +48,7 @@ app.post('/emergencyRead', function(req, res){
               for (var i = 0 , ii = contacts.length ; i < ii ; i = i + 1){
                   contactInfo = contacts[i];
                   var phoneNumber = contactInfo.phoneNumber;
+                  console.log(phoneNumber);
                   var name = contactInfo.name;
                   if (! place){
                     var message = doc.username + " has been injured. You are their emergency contact. They are being taken care of, and you will be contacted with more details as they become available";
@@ -129,6 +134,7 @@ app.post('/signup' , function(req, res){
   data.password = hashed;
   data.salt = salt
   patientInfo.insert(data);
+  res.send({"status":"ok"});
 });
 
 app.post('/signupResponder' , function(req, res){
@@ -163,6 +169,10 @@ app.get('/' , function(req, res){
 
 });
 
+app.get('/signup', function (req, res) {
+  res.render('signup');
+});
+
 var isValidToken = function(manufacturerId, authToken){
     return true;
 }
@@ -189,6 +199,8 @@ var generateId = function(){
 }
 
 var sendSms = function (message, to){
+  console.log(1 , message);
+  console.log(2, to);
   var gvmaxUrl = 'https://www.gvmax.com/api/send';
   var params = {'pin': '82af7ad1f0814408a49b35ac43e0c3a0' , 'number': to , 'text': message};
   if (to !== undefined && to !== null){
