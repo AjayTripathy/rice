@@ -119,7 +119,7 @@ $(document).ready(function () {
   var register = function () {
     var name = $("#username").val();
     var pw = $("#password").val();
-    var allergies = $("#allergy").val().split(',');
+    var allergies = $("#allergies").val().split(',');
     var bloodType = $("#bloodType").val();
     var contactName = $("#contact").val();
     var contactNumber = $("#contactNum").val();
@@ -134,7 +134,11 @@ $(document).ready(function () {
         contacts: contact,
         bloodType: bloodType
       }, function (data) {
-        console.log(data);
+        if (data['status'] === "ok") {
+          window.location.href = "/";
+        } else {
+          log("Some error occurred", data);
+        }
       });
     } else {
       alert("Fill out all fields");
