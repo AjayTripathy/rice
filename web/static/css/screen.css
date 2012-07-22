@@ -329,4 +329,46 @@ header ul li a:hover {
 #contentArea button {
   position: relative;
   right: -282px;
+  padding: .25em .5em;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fafafa), color-stop(100%, #e6f3de));
+  background-image: -webkit-linear-gradient(#fafafa, #e6f3de);
+  background-image: -moz-linear-gradient(#fafafa, #e6f3de);
+  background-image: -o-linear-gradient(#fafafa, #e6f3de);
+  background-image: -ms-linear-gradient(#fafafa, #e6f3de);
+  background-image: linear-gradient(#fafafa, #e6f3de);
+  font: 16px "Arimo", "Helvetica", "Arial", sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+/* line 276, ../scss/screen.scss */
+#contentArea button:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fafafa), color-stop(100%, #dcf2ce));
+  background-image: -webkit-linear-gradient(#fafafa, #dcf2ce);
+  background-image: -moz-linear-gradient(#fafafa, #dcf2ce);
+  background-image: -o-linear-gradient(#fafafa, #dcf2ce);
+  background-image: -ms-linear-gradient(#fafafa, #dcf2ce);
+  background-image: linear-gradient(#fafafa, #dcf2ce);
+  -webkit-box-shadow: 0 0 3px f2efce;
+  -moz-box-shadow: 0 0 3px f2efce;
+  box-shadow: 0 0 3px f2efce;
+  border: 1px solid #d3d3d3;
+}
+/* line 284, ../scss/screen.scss */
+#contentArea button:active, #contentArea button:focus {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #dcf2ce), color-stop(100%, #fafafa));
+  background-image: -webkit-linear-gradient(#dcf2ce, #fafafa);
+  background-image: -moz-linear-gradient(#dcf2ce, #fafafa);
+  background-image: -o-linear-gradient(#dcf2ce, #fafafa);
+  background-image: -ms-linear-gradient(#dcf2ce, #fafafa);
+  background-image: linear-gradient(#dcf2ce, #fafafa);
+  outline-width: 0;
+}
+/* line 293, ../scss/screen.scss */
+#contentArea .caption-wrap p {
+  margin: -0.5em 0 0.5em;
+}
+/* line 297, ../scss/screen.scss */
+#contentArea .caption-wrap button {
+  position: static;
+  right: 0;
 }

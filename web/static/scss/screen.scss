@@ -265,6 +265,38 @@ header {
     button {
         position: relative;
         right: -282px;
+        padding: .25em .5em;
+        @include background-image(
+            linear-gradient(#fafafa, #e6f3de)
+        );
+        font: 16px $arimo;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+
+        &:hover {
+            @include background-image(
+                linear-gradient(#fafafa, #dcf2ce)
+            );
+            @include box-shadow(0 0 3px f2efce);
+            border: 1px solid #d3d3d3;
+        }
+
+        &:active, &:focus {
+            @include background-image(
+                linear-gradient(#dcf2ce, #fafafa)
+            );
+            outline-width: 0;
+        }
     }
 
+    .caption-wrap {
+        p {
+            margin: -.5em 0 .5em;
+        }
+    
+        button {
+            position: static;
+            right: 0;
+        }
+    }
 }
