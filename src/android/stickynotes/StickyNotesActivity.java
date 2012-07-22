@@ -31,6 +31,7 @@ import android.nfc.tech.Ndef;
 import android.nfc.tech.NdefFormatable;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.os.StrictMode;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -38,27 +39,65 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.NameValuePair;
+import org.apache.http.StatusLine;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class StickyNotesActivity extends Activity {
     private static final String TAG = "stickynotes";
     private boolean mResumed = false;
     private boolean mWriteMode = false;
+    private boolean registerMode = false;
     NfcAdapter mNfcAdapter;
     EditText mNote;
+    HttpClient httpclient;
+    HttpResponse response;
 
     PendingIntent mNfcPendingIntent;
     IntentFilter[] mWriteTagFilters;
     IntentFilter[] mNdefExchangeFilters;
+    
+    String manId;
+    String authToken;
+    String name;
+    String bloodType;
+    
+    String manufacturerId;
+    
+    String username;
+    String password;
 
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        httpclient = new DefaultHttpClient();
+        
+        //stupid fix
+        if (android.os.Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+          }
 
         setContentView(R.layout.main);
         findViewById(R.id.write_tag).setOnClickListener(mTagWriter);
+        findViewById(R.id.get_tag_info).setOnClickListener(getTagInfo);
         mNote = ((EditText) findViewById(R.id.note));
         mNote.addTextChangedListener(mTextWatcher);
 
@@ -102,9 +141,22 @@ public class StickyNotesActivity extends Activity {
     @Override
     protected void onNewIntent(Intent intent) {
         // NDEF exchange mode
-        if (!mWriteMode && NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())) {
+        if (!mWriteMode && NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction()) && registerMode == false) {
+        	Log.i("TEST","Register mode false. Assume EMERGENCY READ");
             NdefMessage[] msgs = getNdefMessages(intent);
-            promptForContent(msgs[0]);
+            parseContent(msgs[0]);
+            //promptForContent(msgs[0]);
+        	//readThread.run();
+        } else if (!mWriteMode && NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction()) && registerMode == true) {
+        	Log.i("TEST","Register mode true. Assume REGISTRATION");
+        	NdefMessage[] msgs = getNdefMessages(intent);
+        	registerUser(mNote.getText().toString());
+        	Tag detectedTag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+        	Log.i("sticky","totes detected");
+        	Log.i("authToken",authToken);
+        	String toWrite = manufacturerId + ";" + authToken + ";" + name + ";" + bloodType;
+        	writeTag(stringToNdef(toWrite),detectedTag);
+        	
         }
 
         // Tag writing mode
@@ -146,6 +198,121 @@ public class StickyNotesActivity extends Activity {
                     }).create().show();
         }
     };
+    
+    Thread registerThread = new Thread() {
+    	public void run() {
+    		Log.i("STICKYNOTE","running test");
+			HttpPost httppost = new HttpPost("http://192.168.1.216:8080/getTagInfo");
+			try {
+				//add data here
+				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
+				nameValuePairs.add(new BasicNameValuePair("manufacturerId",manufacturerId));
+				nameValuePairs.add(new BasicNameValuePair("username",username));
+				nameValuePairs.add(new BasicNameValuePair("password","asdf"));
+				httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+				
+				//execute Post request
+				Log.i("STICKYNOTE","about to execute!!");
+				HttpResponse response = httpclient.execute(httppost);
+				
+				StatusLine statusLine = response.getStatusLine();
+				if (statusLine.getStatusCode() == HttpStatus.SC_OK) {
+					ByteArrayOutputStream out = new ByteArrayOutputStream();
+					try {
+						response.getEntity().writeTo(out);
+						out.close();
+						String responseString = out.toString();
+						Log.i("STICKYNOTE","Printing out response");
+						//Log.i("STICKYNOTE",responseString);
+						
+						//parse the JSON, then save it to the reader
+						JSONObject jObject = new JSONObject(responseString);
+						String status = jObject.getString("status");
+						Log.i("STICKYNOTE","Got status: "+status);
+						JSONObject dataObj = jObject.getJSONObject("data");
+						authToken = dataObj.getString("authToken");
+						manufacturerId = dataObj.getString("manufacturerId");
+						Log.i("STICKYNOTE","Manufacturer Id: "+manufacturerId);
+						bloodType = dataObj.getString("bloodType");
+						name = dataObj.getString("username");
+						Log.i("STICKYNOTE","Got token: "+authToken);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (JSONException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+				}
+				
+			} catch (ClientProtocolException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+    	}
+    };
+    
+    Thread readThread = new Thread() {
+    	public void run() {
+			HttpPost httppost = new HttpPost("http://192.168.1.216:8080/emergencyRead");
+    		//HttpGet httpget = new HttpGet("http://192.168.1.216:8080/emergencyRead?manufacturerId="+manId+"&authToken="+authToken);
+			Log.i("STICKYNOTE","running test");
+			//HttpPost httppost = new HttpPost("http://192.168.1.216:8080/getTagInfo");
+			try {
+				//add data here
+				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+				nameValuePairs.add(new BasicNameValuePair("manufacturerId",manufacturerId));
+				nameValuePairs.add(new BasicNameValuePair("authToken",authToken));
+				httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+				
+				//execute Post request
+				Log.i("STICKYNOTE","about to execute!!");
+				HttpResponse response = httpclient.execute(httppost);
+				
+				StatusLine statusLine = response.getStatusLine();
+				if (statusLine.getStatusCode() == HttpStatus.SC_OK) {
+					ByteArrayOutputStream out = new ByteArrayOutputStream();
+					try {
+						response.getEntity().writeTo(out);
+						out.close();
+						String responseString = out.toString();
+						Log.i("STICKYNOTE","Printing out response");
+						Log.i("STICKYNOTE",responseString);
+						
+						//parse the JSON, then save it to the reader
+						JSONObject jObject = new JSONObject(responseString);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (JSONException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+    	}
+    };
+    
+    private View.OnClickListener getTagInfo = new View.OnClickListener() {
+    	public void onClick(View arg0) {
+    		//thread.start();
+    		registerMode = true;
+    		new AlertDialog.Builder(StickyNotesActivity.this).setTitle("Register Mode: On").setOnCancelListener(new DialogInterface.OnCancelListener() {
+    			public void onCancel(DialogInterface dialog) {
+    				registerMode = false;
+    			}
+			}).create().show();
+    		
+    	}
+
+    };
 
     private void promptForContent(final NdefMessage msg) {
         new AlertDialog.Builder(this).setTitle("Replace current content?")
@@ -160,6 +327,27 @@ public class StickyNotesActivity extends Activity {
                     
                 }
             }).show();
+    }
+    
+    private void parseContent(final NdefMessage msg) {
+    	String body = new String(msg.getRecords()[0].getPayload());
+    	Log.i("TEST","Payload");
+    	Log.i("TEST",body);
+    	String[] split = body.split(";");
+    	manId = split[0];
+    	authToken = split[1];
+    	name = split[2];
+    	bloodType = split[3];
+    	
+    	readThread.run();
+    }
+    
+    private void registerUser(String uname) {
+    	Log.i("TEST","Registering!!");
+    	Log.i("TEST","Name: "+uname);
+    	username = uname;
+    	registerThread.run();
+    	
     }
 
     private void setNoteBody(String body) {
@@ -176,6 +364,19 @@ public class StickyNotesActivity extends Activity {
             textRecord
         });
     }
+    
+    private NdefMessage stringToNdef(String s) {
+    	Log.i("sticky","CONVERTING YOUR STRING FOR WRITING PURPOSES");
+    	Log.i("sticky","This is the string: "+s);
+    	byte[] textBytes = s.getBytes();
+    	Log.i("sticky","bytes gotten");
+    	NdefRecord textRecord = new NdefRecord(NdefRecord.TNF_MIME_MEDIA, "text/plain".getBytes(), 
+    			new byte[] {}, textBytes);
+    	Log.i("sticky","huehuehue");
+    	return new NdefMessage(new NdefRecord[] {
+    			textRecord
+    	});
+    }
 
     NdefMessage[] getNdefMessages(Intent intent) {
         // Parse the intent
@@ -184,6 +385,10 @@ public class StickyNotesActivity extends Activity {
         if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(action)
                 || NfcAdapter.ACTION_NDEF_DISCOVERED.equals(action)) {
             Parcelable[] rawMsgs = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
+            byte[] tagId = intent.getByteArrayExtra(NfcAdapter.EXTRA_ID);
+            manufacturerId = new String(tagId);
+            Log.i("test","WRITING MESSAGE WOO");
+            Log.i("test","Test ID: "+new String(tagId));
             if (rawMsgs != null) {
                 msgs = new NdefMessage[rawMsgs.length];
                 for (int i = 0; i < rawMsgs.length; i++) {
@@ -232,6 +437,8 @@ public class StickyNotesActivity extends Activity {
     }
 
     boolean writeTag(NdefMessage message, Tag tag) {
+    	Log.i("derp","WRITING TAG");
+    	Log.i("derp","String is: "+message.toString());
         int size = message.toByteArray().length;
 
         try {
