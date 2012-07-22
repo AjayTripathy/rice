@@ -22,16 +22,93 @@
 </head>
 <body>
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-  <header>
+  <div id="root">
+  
+    <header>
+      <div id="headerContainer">
+        <div id="headerArea">
+          <ul class="nav">
+            <li class="active"><a href="#">Family</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <ul class="nav pull-right">
+            <li>Hello, <a href="#">Rodney Folz</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </div> <!-- #headerArea -->
+      </div> <!-- #headerContainer -->
+    </header>
 
-  </header>
-  <div role="main">
+    <div role="main" id="main">
+      <div id="mainHeaderContainer">
+        <div id="mainHeader">
+          <h1>All your family.</h1>
+          <p>Everyone is doing just fine.</p>
+        </div> <!-- #mainHeader -->
+      </div> <!-- #mainHeaderContainer -->
+      <div id="mainBody">
+        <div id="leftColContainer">
+          <div id="leftCol">
+            <p>Just for reference, here's leftCol</p>
+          </div> <!-- #leftCol -->
+        </div> <!-- #leftColContainer -->
 
-  </div>
-  <footer>
+        <div id="contentCol">
+          <div id="rightColContainer">
+            <div role="complementary" id="rightCol">
+            </div> <!-- #rightCol -->
+          </div> <!-- #rightColContainer -->
+          <div id="contentArea">
+            <ul class="overview">
+              <li class="image-captioned large">
+                <div class="image-wrap okay">
+                  <img src="/img/sebrand.png">
+                  <div class="status"></div>
+                </div>
+                <div class="caption-wrap">
+                  <h2>
+                    <a href="#">Sebrand</a>
+                  </h2>
+                  <p>Something goes here too la la la la la</p>
+                </div>
+              </li>
+              <li class="image-captioned large">
+                <div class="image-wrap okay">
+                  <img src="/img/geena.png">
+                  <div class="status"></div>
+                </div>
+                <div class="caption-wrap">
+                  <h2>
+                    <a href="#">Geena</a>
+                  </h2>
+                  <p>Something goes here too la la la la la</p>
+                </div>
+              </li>
+              <li class="image-captioned large">
+                <div class="image-wrap okay">
+                  <img src="/img/leah.png">
+                  <div class="status"></div>
+                </div>
+                <div class="caption-wrap">
+                  <h2>
+                    <a href="#">Leah</a>
+                  </h2>
+                  <p>Something goes here too la la la la la</p>
+                </div>
+              </li>
+            </ul>
+          </div> <!-- #contentArea -->
+        </div> <!-- #contentCol -->
+      </div> <!-- #mainBody -->
 
-  </footer>
+    </div> <!-- #main -->
 
+    <footer>
+
+    </footer>
+
+  </div> <!-- #root -->
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
