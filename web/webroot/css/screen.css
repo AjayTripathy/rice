@@ -1,0 +1,306 @@
+/* line 17, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 114, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/**
+ * H: 280
+ * S: 60%
+ * L: 45%
+ */
+/**
+ * H: 280
+ * S: 60%
+ * L: 60%
+ * 528729
+ */
+/**
+ * H: 280
+ * S: 15%
+ * L: 90%
+ */
+/**
+ * H: 280
+ * S: 10%
+ * L: 95%
+ */
+/**
+ * H: 280
+ * S: 5%
+ * L: 90%
+ */
+/* line 48, ../scss/screen.scss */
+html, body, #root {
+  height: 100%;
+}
+
+/* line 52, ../scss/screen.scss */
+body {
+  font: 14px/1.4em "Arimo", "Helvetica", "Arial", sans-serif;
+  color: #080d02;
+  background: url("/img/dandelion.png") #3d530c;
+}
+
+/* line 58, ../scss/screen.scss */
+.left-right {
+  clear: both;
+}
+/* line 61, ../scss/screen.scss */
+.left-right .left {
+  float: left;
+}
+/* line 65, ../scss/screen.scss */
+.left-right .right {
+  float: right;
+}
+
+/* line 70, ../scss/screen.scss */
+.pull-right {
+  float: right;
+}
+
+/* line 74, ../scss/screen.scss */
+.image-captioned {
+  clear: both;
+  margin-bottom: 2em;
+}
+/* line 78, ../scss/screen.scss */
+.image-captioned .image-wrap {
+  float: left;
+  margin: 0 1em 2em 0;
+}
+/* line 83, ../scss/screen.scss */
+.image-captioned.large .caption-wrap {
+  margin-left: 108px;
+}
+
+/* line 88, ../scss/screen.scss */
+.image-wrap {
+  display: inline-block;
+  position: relative;
+  padding: 4px;
+  line-height: 0px;
+  border: 1px solid #b2b2b2;
+  /*
+      &.okay .status {
+          position: absolute;
+          right: 4px;
+          bottom: 4px;
+          width: 98px;
+          height: 16px;
+          @include background-image(
+              url("/img/check.png"),
+              linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, .4), rgba(0, 0, 0, 0.6))
+          );
+          background-repeat: no-repeat;
+          background-position: bottom right;
+          
+      }
+  */
+}
+/* line 95, ../scss/screen.scss */
+.image-wrap, .image-wrap img {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
+
+/* line 116, ../scss/screen.scss */
+header {
+  height: 41px;
+  background-color: #000;
+  -webkit-box-shadow: 0 2px 6px -4px black;
+  -moz-box-shadow: 0 2px 6px -4px black;
+  box-shadow: 0 2px 6px -4px black;
+}
+/* line 121, ../scss/screen.scss */
+header #headerContainer {
+  width: 900px;
+  margin: 0 auto;
+}
+/* line 126, ../scss/screen.scss */
+header #headerArea {
+  margin-left: 15px;
+}
+/* line 130, ../scss/screen.scss */
+header ul {
+  display: inline;
+}
+/* line 133, ../scss/screen.scss */
+header ul li {
+  display: block;
+  float: left;
+  margin: 0 20px 0 0;
+  padding: 10px 0 0;
+  font: 15px "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Ludica Sans", "Tahoma", "Helvetica", "Arial", sans-serif;
+  color: #ccc;
+  text-decoration: none;
+}
+/* line 142, ../scss/screen.scss */
+header ul li.active {
+  font-weight: bold;
+  color: #fff;
+}
+/* line 149, ../scss/screen.scss */
+header ul li a {
+  color: #e8e8e8;
+  text-decoration: none;
+}
+/* line 153, ../scss/screen.scss */
+header ul li a:hover {
+  padding-top: 7px;
+  color: #fff;
+  border-top: 3px solid #c6e65c;
+}
+
+/* line 166, ../scss/screen.scss */
+#mainHeaderContainer {
+  background: url("/img/dandelion-overlay.png") #688045 no-repeat fixed;
+  height: 100px;
+}
+
+/* line 172, ../scss/screen.scss */
+#mainHeader h1 {
+  padding-top: .5em;
+  font-size: 44px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+/* line 179, ../scss/screen.scss */
+#mainHeader p {
+  padding-top: 1.7em;
+  font-size: 16px;
+  font-weight: bold;
+  color: #F0EBD8;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* line 188, ../scss/screen.scss */
+#mainHeader, #mainBody {
+  position: relative;
+  width: 880px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* line 195, ../scss/screen.scss */
+#mainBody {
+  margin-top: 95px;
+}
+
+/* line 199, ../scss/screen.scss */
+#leftCol {
+  float: left;
+  width: 270px;
+}
+
+/* line 204, ../scss/screen.scss */
+#contentCol {
+  float: right;
+  width: 580px;
+  background: #f0ebd8 no-repeat fixed;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* line 212, ../scss/screen.scss */
+#contentArea {
+  height: 100%;
+  margin-top: 28px;
+  padding: 0 0 0 48px;
+}
+/* line 217, ../scss/screen.scss */
+#contentArea h2 {
+  margin: 0 0 14px 0;
+  font: bold 44px "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Ludica Sans", "Tahoma", "Helvetica", "Arial", sans-serif;
+  letter-spacing: -1px;
+  line-height: 1em;
+  color: #536614;
+}
+/* line 224, ../scss/screen.scss */
+#contentArea h2 a {
+  color: #536614;
+  text-decoration: none;
+}
+/* line 228, ../scss/screen.scss */
+#contentArea h2 a:hover {
+  color: #78a310;
+}
+/* line 234, ../scss/screen.scss */
+#contentArea ul {
+  position: relative;
+  left: -20px;
+  width: 590px;
+}
+/* line 239, ../scss/screen.scss */
+#contentArea ul.overview li {
+  margin: 0 0 0 20px;
+}
