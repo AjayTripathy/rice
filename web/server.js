@@ -14,10 +14,10 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
-app.get('/auth', function(req, res){
-     var userId = req.body.user;
+app.get('/emergencyRead', function(req, res){
+     var manufacturerId = req.body.manufacturerId;
      var authToken = req.body.authToken;
-     if ( isValid(userId, authToken) ) {
+     if ( isValidToken(manufacturerId, authToken) ) {
         patientInfo.findById(userId , function (err, doc) {
             if (err) {
               res.send({'status' : err , data : null});
@@ -44,16 +44,18 @@ app.post('/addInfo' , function(req, res){
     }
 });
 
-app.get('/getTagInfo' , function (req, res){
+app.get('/getTagInfoForWriting' , function (req, res){
     var userName = req.userName;
     var password = req.password;
+    var manufacturerId = req.manufacturerId;
     if (isWebsiteAuthenticated(userId, password)){
       patientInfo.findOne({'userName' : userName} , function(err , doc){
         if (err){
           throw err;
         }
         else{
-          var token = generateAuthToken;
+          var token = generateAuthToken(manufacturerId);
+          doc.authToken = token;
           res.send({'status' : ok , 'data' : doc}); 
         }
       });
@@ -63,9 +65,12 @@ app.get('/getTagInfo' , function (req, res){
     }
 });
 
+app.post('/finishedWriting' , function(req, res){
+  var manufacturerId = req.manufacturerId;
+  var authToken = req.authToken;
+});
 
-
-var isValid = function(userId, authToken){
+var isValidToken = function(manufacturerId, authToken){
     return true;
 }
 
