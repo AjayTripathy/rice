@@ -65,8 +65,8 @@
               <input id="bloodType" type="text" placeholder="O+">
             </p>
             <p>
-              <label>Allergy</label>
-              <input id="allergy" type="text" placeholder="peanuts, tree nuts">
+              <label>Allergies</label>
+              <input id="allergies" type="text" placeholder="peanuts, tree nuts">
             </p>
             <p>
               <label>Emergency Contact</label>
@@ -119,21 +119,26 @@ $(document).ready(function () {
   var register = function () {
     var name = $("#username").val();
     var pw = $("#password").val();
-    var allergies = [$("#allergy").val()];
+    var allergies = $("#allergy").val().split(',');
     var bloodType = $("#bloodType").val();
     var contactName = $("#contact").val();
     var contactNumber = $("#contactNum").val();
     var contactJson = {name : contactName, phoneNumber: contactNumber};
     var contact = [contactJson];
-    $.post("http://localhost:8080/signup", {
-      username: name,
-      password: pw,
-      allergies: allergies,
-      contacts: contact,
-      bloodType: bloodType
-    }, function (data) {
-      console.log(data);
-    });
+
+    if (name && pw && allergies && bloodType && contactName && contactNumber) {
+      $.post("http://localhost:8080/signup", {
+        username: name,
+        password: pw,
+        allergies: allergies,
+        contacts: contact,
+        bloodType: bloodType
+      }, function (data) {
+        console.log(data);
+      });
+    } else {
+      alert("Fill out all fields");
+    }
   }
 
 });
