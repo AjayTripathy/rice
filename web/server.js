@@ -11,6 +11,11 @@ var rest = require('restler');
 
 var app =  express.createServer();
 
+var familyStatus = db.collection('familyStatus');
+
+var crypto = require('crypto');
+var hash = require('node_hash');
+
 app.use(express.static(__dirname + '/public'));
 app.use(express.bodyParser());
 
@@ -23,10 +28,11 @@ app.post('/emergencyRead', function(req, res){
      var manufacturerId = req.body.manufacturerId;
      var authToken = req.body.authToken;
      var place = req.body.place;
+     var responderName = req.body.responderName;
+     var responderPassword = req.body.responderPassword;
      //var myNumber = req.query.myNumber; 
-     var myNumber = "15102322453"
      console.log(manufacturerId);
-     if ( isValidToken(manufacturerId, authToken) ) {
+     if ( isValidToken(manufacturerId, authToken) && isValidResponder(responderName, responderPassword)  ) {
         patientInfo.findOne({'manufacturerId' : manufacturerId} , function (err, doc) {
             if (err) {
               res.send({'status' : err , data : null});
@@ -47,6 +53,12 @@ app.post('/emergencyRead', function(req, res){
                   }
                   sendSms(message, phoneNumber)
               }
+            }
+            if (doc.stat){
+              doc.stat = "danger";
+              var id = doc['_id'].toString();
+              patientInfo.updateById(id , doc);
+              //call bridge updater with _id 
             }
         });
      }
@@ -82,7 +94,7 @@ app.post('/getTagInfo' , function (req, res){
           throw err;
         }
         else{
-          var token = generateAuthToken(manufacturerId);
+          var token = generateAuthToken(username , manufacturerId);
           doc.authToken = token;
           doc.manufacturerId = manufacturerId;
           var id = doc['_id'].toString();
@@ -102,7 +114,7 @@ app.post('/getTagInfo' , function (req, res){
 
 app.post('/testGet' , function(req, res){
   console.log('hi');
-  var userName = req.body.userName;
+  var userName = req.body.username;
   var password = req.body.password;
   var manufacturerId = req.body.manufacturerId;
   res.send({'status' : 'ok', 'data' : { "userName": userName , "password": password , "bloodType": "A+", "authToken" : 1 }} );
@@ -110,20 +122,65 @@ app.post('/testGet' , function(req, res){
 
 
 app.post('/signup' , function(req, res){
+  var password = req.body.password;
+  var salt = generateId();
+  var hashed = hash.sha256(password, salt);
   var data = req.body;
+  data.password = hashed;
+  data.salt = salt
   patientInfo.insert(data);
+});
+
+app.post('/signupResponder' , function(req, res){
+  var username = req.body.username;
+  var password = req.body.password;
+  var salt = generateId();
+  var hashed = hash.sha256(password, salt);
+  var data = req.body;
+  data.password = hashed;
+  data.salt = salt;
+  responderInfo.insert(data);
+});
+
+app.post('/addFamilyMember' , function(req, res){
+  var username = username;
+  var familyMemberUsername = req.body.familyMemberUsername;
+  var familyMemberPassword = req.body.familyMemberPassword;
+  if (isWebsiteAuthenticated(familyMemberUsername, familyMemberPassword) && isWebsiteAuthenticated(username, password)){
+     patientInfo.findOne({username : familyMemberUsername} , function(err, doc){
+       var updateObj = {'$push' : {monitored : doc['_id']}}
+       familyStatus.update({username : username} , updateObj , {upsert : true})
+     });  
+  }
+  else{
+    res.send({'status' : 'Permission denied'});
+  }
+
 });
 
 var isValidToken = function(manufacturerId, authToken){
     return true;
 }
 
-var isWebsiteAuthenticated = function(userName, password){
+var isWebsiteAuthenticated = function(username, password){
   return true;
 }
 
-var generateAuthToken = function(manufacturerId){
-  return 1;
+var isValidResponder = function(responderName, responderPassword){
+  return true;
+}
+
+var generateAuthToken = function(username , manufacturerId){
+  return 1
+}
+
+var generateId = function(){
+  var text = ""; 
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  for( var i=0; i < 8; i++ ) { 
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }   
+  return text;
 }
 
 var sendSms = function (message, to){
